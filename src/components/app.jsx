@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import giphy from 'giphy-api';
 
-import giphyApi from 'giphy-api';
+// import giphyApi from 'giphy-api';
 import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
@@ -13,10 +13,8 @@ class App extends Component {
 
     this.state = {
       gifs: [],
-      selectedGifId: "cat-cool-cats-cfuL5gqFDreXxkWQ4o"
+      selectedGifId: "nfl-transparent-mahomes-hTt34SSvrHFp3huHFC"
     };
-
-    this.search("disney");
   }
 
   search = (query) => {
@@ -34,7 +32,7 @@ class App extends Component {
     return (
       <div>
         <div className="left-scene">
-          <SearchBar searchFuncion={this.search} />
+          <SearchBar searchFunction={this.search} />
           <div className="selected-gif">
             <Gif id={this.state.selectedGifId} />
           </div>
