@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 class Gif extends Component {
   render () {
-    const src = `https://giphy.com/gifs/${this.props.id}`;
+    const src = `https://media3.giphy.com/media/${this.props.id}/200w.webp`;
     return (
       <img src={src} alt="" className="gif" />
     );
