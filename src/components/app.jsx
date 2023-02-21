@@ -22,14 +22,19 @@ class App extends Component {
     this.selectGif = this.selectGif.bind(this);
   }
 
-  search = (query) => {
-    giphy('JM3HjQSCmKseo0Qt2WcsE8Zr9dllOO3G').search({
-      q: query,
-      rating: 'g'
-    }, (error, result) => {
+  search(query) {
+    const giphEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${GIPHY_API_KEY}&q=${query}&limit=10`
+    fetch(giphEndpoint).then(response => response.json()).then((data) => {
+      const gifs = data.data.map(giph => giph.id);
       this.setState({
-        gifs: result.data
+        gifs
       });
+    });
+  }
+
+  selectGif(id) {
+    this.setState({
+      selectedGifId: id
     });
   }
 
@@ -43,7 +48,7 @@ class App extends Component {
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs} />
+          <GifList gifs={this.state.gifs} selectGif={this.selectGif} />
         </div>
       </div>
     );
