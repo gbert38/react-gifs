@@ -7,6 +7,9 @@ import SearchBar from './search_bar';
 import Gif from './gif';
 import GifList from './gif_list';
 
+const GIPHY_API_KEY = 'JM3HjQSCmKseo0Qt2WcsE8Zr9dllOO3G';
+
+
 class App extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +18,8 @@ class App extends Component {
       gifs: [],
       selectedGifId: "5U16xwHN2VTuPZCpd6"
     };
+    this.search = this.search.bind(this);
+    this.selectGif = this.selectGif.bind(this);
   }
 
   search = (query) => {
