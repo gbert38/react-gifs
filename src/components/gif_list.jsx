@@ -1,3 +1,6 @@
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/jsx-no-comment-textnodes */
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import Gif from './gif';
 
